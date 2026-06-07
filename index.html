@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Grubu Sunucusu | Topluluk Merkezi</title>
+    <style>
+        :root {
+            --bg-color: #1e1e2e;
+            --container-bg: #252538;
+            --text-color: #cdd6f4;
+            --accent-color: #a6e3a1; /* Minecraft Yeşili */
+            --btn-color: #89b4fa;
+            --btn-hover: #b4befe;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            background-color: var(--container-bg);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid #45475a;
+        }
+        h1 { color: #f5c2e7; margin-bottom: 5px; font-size: 28px; }
+        .subtitle { color: #a6adc8; font-size: 16px; margin-top: 0; margin-bottom: 25px; }
+        
+        .status-badge {
+            background-color: rgba(166, 227, 161, 0.1);
+            color: var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f38ba8;
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        .ip-box {
+            background-color: #11111b;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            color: var(--accent-color);
+            border: 1px solid #45475a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background-color: #45475a;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+        .copy-btn:hover { background-color: #585b70; }
+
+        .btn-main {
+            background-color: var(--btn-color);
+            color: #11111b;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            transition: 0.3s transform, 0.2s background-color;
+            box-shadow: 0 4px 14px rgba(137, 180, 250, 0.3);
+        }
+        .btn-main:hover { 
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            text-align: left;
+            background: #181825;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .features-list div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .features-list div:last-child { margin-bottom: 0; }
+        .icon { margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="status-badge">🟢 TOPLULUK HAZIRLANIYOR</div>
+    
+    <h1>MC Grubu</h1>
+    <p class="subtitle">Element X Resmi Sohbet ve Yardımlaşma Merkezi</p>
+    
+    <div class="section-title">Sunucu Adresi (IP)</div>
+    <div class="ip-box">
+        <span id="ipText">#mcgrupu:matrix.org</span>
+        <button class="copy-btn" onclick="copyIP()">Kopyala</button>
+    </div>
+
+    <div class="section-title">Bu Toplulukta Neler Olacak?</div>
+    <div class="features-list">
+        <div><span class="icon">🎮</span> Birlikte Modlu/Vanilla Survival maceraları</div>
+        <div><span class="icon">⚡</span> PojavLauncher ve PC için FPS artırma taktikleri</div>
+        <div><span class="icon">🛠️</span> Sodium ve en iyi performans modlarının paylaşımları</div>
+        <div><span class="icon">💬</span> Kesintisiz oyun içi sohbet ve yardımlaşma</div>
+    </div>
+
+    <!-- SchildiChat'i engelleyen Element X uyumlu ana katılım butonu -->
+    <a href="https://matrix.to/#/#mcgrupu:matrix.org?client=element" target="_blank" class="btn-main">Element X ile Gruba Katıl</a>
+</div>
+
+<script>
+function copyIP() {
+    var copyText = document.getElementById("ipText").innerText;
+    navigator.clipboard.writeText(copyText);
+    alert("Adres kopyalandı! Element X'e yapıştırıp aratabilirsin.");
+}
+</script>
+
+</body>
+</html>
+
